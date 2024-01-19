@@ -33,7 +33,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
     const urlParams = new URLSearchParams(window.location.search);
     const cityParam = urlParams.get("city") ? urlParams.get("city") : city;
     console.log(cityParam);
-    const apiUrl = `http://localhost:3000/doctorsArray?city=${cityParam}`;
+    const apiUrl = `https://nodejs-production-d336.up.railway.app/api/doctors?city=${cityParam}`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setAvailableDoctors(data))

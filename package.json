@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run start-vite\" \"npm run start-json-server\"",
+    "dev": "npm run start-vite",
     "start-vite": "vite",
-    "start-json-server": "json-server --watch db.json --port 3000",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
