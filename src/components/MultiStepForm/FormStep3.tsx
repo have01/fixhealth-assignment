@@ -32,6 +32,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
     // Fetch data from the API with the city parameter
     const urlParams = new URLSearchParams(window.location.search);
     const cityParam = urlParams.get("city") ? urlParams.get("city") : city;
+    console.log(cityParam);
     const apiUrl = `http://localhost:3000/doctorsArray?city=${cityParam}`;
     fetch(apiUrl)
       .then((response) => response.json())
@@ -111,7 +112,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
                 </option>
                 {availableDoctors?.map((doctor: Doctor) => (
                   <option key={doctor.name} value={doctor.name}>
-                    {doctor?.name}
+                    {doctor?.name} <p className="ml-2">({doctor?.specialty})</p>
                   </option>
                 ))}
               </select>
