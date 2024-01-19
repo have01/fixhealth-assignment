@@ -1,4 +1,12 @@
-const TestimonialCard = ({ item }) => {
+interface TestimonialCardProps {
+  username: string;
+  reviewText: string;
+  // Add other properties if needed
+}
+
+const TestimonialCard: React.FC<{ item: TestimonialCardProps }> = ({
+  item,
+}) => {
   return (
     <>
       <div className="relative p-6 h-[210px] space-y-6 leading-none rounded-lg bg-white ring-1 ring-gray-900/5 mx-2">
