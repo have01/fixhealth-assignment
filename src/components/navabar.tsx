@@ -1,7 +1,7 @@
 const navabar = () => {
   return (
     <>
-      <nav className=" bg-gray-900 sticky top-0 z-40 w-full shadow-md flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06]  backdrop-filter backdrop-blur-lg dark:bg-slate-900/75">
+      <nav className=" bg-gray-900 sticky top-0 z-40 w-full shadow-md flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="https://flowbite.com/"
