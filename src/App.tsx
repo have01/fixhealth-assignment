@@ -1,15 +1,23 @@
+import React, { lazy, Suspense } from "react";
 import "./App.css";
-import Navbar from "./components/navabar";
-import Hero from "./components/hero";
-import MultiStepForm from "./components/MultiStepForm";
-import TestimonialCarousel from "./components/TestimonialCarousel";
+import Loader from "./components/Loader";
+
+const Navbar = lazy(() => import("./components/navabar"));
+const Hero = lazy(() => import("./components/hero"));
+const MultiStepForm = lazy(() => import("./components/MultiStepForm"));
+const TestimonialCarousel = lazy(
+  () => import("./components/TestimonialCarousel")
+);
+
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <MultiStepForm />
-      <TestimonialCarousel />
+      <Suspense fallback={<Loader />}>
+        <Navbar />
+        <Hero />
+        <MultiStepForm />
+        <TestimonialCarousel />
+      </Suspense>
     </>
   );
 }
