@@ -27,4 +27,6 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
+
+You can fill Mumbai, Banglore,Pune,Hyderabad for the city to get doctor lis
 ```
