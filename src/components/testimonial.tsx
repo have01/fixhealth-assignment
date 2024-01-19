@@ -1,0 +1,181 @@
+const testimonial = () => {
+  return (
+    <>
+      <div className="min-w-screen  bg-gray-900 flex items-center justify-center ">
+        <div className="w-full bg-gray-900  px-5 py-16 md:py-24 text-gray-800">
+          <div className="w-full max-w-6xl mx-auto">
+            <div className="text-center max-w-xl mx-auto">
+              <h1 className="text-6xl md:text-7xl font-bold mb-5 text-gray-600">
+                What people <br />
+                are saying.
+              </h1>
+              <h3 className="text-xl mb-5 font-light text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </h3>
+              <div className="text-center mb-10">
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-40 h-1 rounded-full bg-indigo-500"></span>
+                <span className="inline-block w-3 h-1 rounded-full bg-indigo-500 ml-1"></span>
+                <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-mx-3 md:flex items-start">
+        <div className="px-3 md:w-1/3">
+          <div className="">
+            <div className="relative group">
+              <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
+              <a href="https://twitter.com/tim_cook" className="cursor-pointer">
+                <div className="relative p-6 space-y-6 leading-none rounded-lg bg-white ring-1 ring-gray-900/5">
+                  <div className="flex items-center space-x-4">
+                    <img
+                      src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                      className="w-12 h-12 bg-center bg-cover border rounded-full"
+                      alt="Tim Cook"
+                    />
+                    <div>
+                      <h3 className="text-lg font-semibold text-black">
+                        Tim Cook
+                      </h3>
+                      <p className="text-gray-500 text-md">CEO of Apple</p>
+                    </div>
+                  </div>
+                  <p className="leading-normal text-black text-md">
+                    Diam quis enim lobortis scelerisque fermentum dui faucibus
+                    in ornare. Donec pretium vulputate sapien nec sagittis
+                    aliquam malesuada bibendum.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div className="text-sm leading-6 border-[#1c1d3d]">c</div>
+        </div>
+        <div className="px-3 md:w-1/3">
+          <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+            <div className="w-full flex mb-4 items-center">
+              <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                <img src="https://i.pravatar.cc/100?img=3" alt="" />
+              </div>
+              <div className="flex-grow pl-3">
+                <h6 className="font-bold text-sm uppercase text-gray-600">
+                  Tommie Ewart.
+                </h6>
+              </div>
+            </div>
+            <div className="w-full">
+              <p className="text-sm leading-tight">
+                <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                  "
+                </span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
+                obcaecati ullam excepturi dicta error deleniti sequi.
+                <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                  "
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+            <div className="w-full flex mb-4 items-center">
+              <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                <img src="https://i.pravatar.cc/100?img=4" alt="" />
+              </div>
+              <div className="flex-grow pl-3">
+                <h6 className="font-bold text-sm uppercase text-gray-600">
+                  Charlie Howse.
+                </h6>
+              </div>
+            </div>
+            <div className="w-full">
+              <p className="text-sm leading-tight">
+                <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                  "
+                </span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Architecto inventore voluptatum nostrum atque, corrupti, vitae
+                esse id accusamus dignissimos neque reprehenderit natus, hic
+                sequi itaque dicta nisi voluptatem! Culpa, iusto.
+                <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                  "
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="px-3 md:w-1/3">
+          <div className="w-full mx-auto rounded-lg border-white border-solid border-2 p-5 text-gray-800 font-light mb-6">
+            <div className="w-full flex mb-4 items-center">
+              <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                <img src="https://i.pravatar.cc/100?img=5" alt="" />
+              </div>
+              <div className="flex-grow pl-3">
+                <h6 className="font-bold text-sm uppercase text-gray-600">
+                  Nevada Herbertson.
+                </h6>
+              </div>
+            </div>
+            <div className="w-full">
+              <p className="text-sm leading-tight text-gray-300">
+                <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                  "
+                </span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                voluptatem porro obcaecati dicta, quibusdam sunt ipsum,
+                laboriosam nostrum facere exercitationem pariatur deserunt
+                tempora molestiae assumenda nesciunt alias eius? Illo, autem!
+                <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                  "
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+            <div className="w-full flex mb-4 items-center">
+              <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+                <img src="https://i.pravatar.cc/100?img=6" alt="" />
+              </div>
+              <div className="flex-grow pl-3">
+                <h6 className="font-bold text-sm uppercase text-gray-600">
+                  Kris Stanton.
+                </h6>
+              </div>
+            </div>
+            <div className="w-full">
+              <p className="text-sm leading-tight ">
+                <span className="text-lg leading-none italic font-bold text-gray-400 mr-1">
+                  "
+                </span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatem iusto, explicabo, cupiditate quas totam!
+                <span className="text-lg leading-none italic font-bold text-gray-400 ml-1">
+                  "
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+        <div>
+          <a
+            title="Buy me a beer"
+            href="https://www.buymeacoffee.com/scottwindon"
+            target="_blank"
+            className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
+          >
+            <img
+              className="object-cover object-center w-full h-full rounded-full"
+              src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
+            />
+          </a>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default testimonial;

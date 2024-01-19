@@ -1,38 +1,63 @@
-// formsSlice.ts
-
+// src/features/formSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface FormsState {
-  formDataObject: Record<string, any>;
-  formData: Record<string, any>[];
+interface FormState {
+  userData: {
+    name?: string;
+    mobile?: string;
+    age?: number;
+    city?: string;
+    company?: string;
+    chiefComplaints?: string;
+    expreience?: string;
+    doctor?: string;
+  };
+  step: number;
 }
 
-const initialState: FormsState = {
-  formDataObject: {},
-  formData: [],
+const initialState: FormState = {
+  userData: {
+    name: "",
+    mobile: "",
+    age: undefined,
+    city: "",
+    company: "",
+    chiefComplaints: "",
+    expreience: "",
+    doctor: "",
+  },
+  step: 1,
 };
 
-const formsSlice = createSlice({
-  name: "forms",
+export const formSlice = createSlice({
+  name: "form",
   initialState,
   reducers: {
-    submitFirstForm: (state, action: PayloadAction<Record<string, any>>) => {
+    setUserData: (state, action: PayloadAction<FormState["userData"]>) => {
       console.log("!", action.payload);
-      state.formDataObject = action.payload;
+      state.userData = { ...state.userData, ...action.payload };
     },
-    submitSecondForm: (state, action: PayloadAction<Record<string, any>>) => {
-      console.log("!!", action.payload);
-
-      const combinedData = {
-        ...state.formDataObject,
-        ...action.payload,
+    setStep: (state, action: PayloadAction<number>) => {
+      state.step = action.payload;
+    },
+    resetForm: (state) => {
+      state.userData = {
+        name: "",
+        mobile: "",
+        age: undefined,
+        city: "",
+        company: "",
+        chiefComplaints: "",
+        expreience: "",
+        doctor: "",
       };
-      console.log(combinedData);
-      state.formData.push(combinedData);
-      state.formDataObject = {};
+      state.step = 1;
     },
   },
 });
 
-export const { submitFirstForm, submitSecondForm } = formsSlice.actions;
-export default formsSlice.reducer;
+export const { setUserData, setStep, resetForm } = formSlice.actions;
+
+export const selectForm = (state: { form: FormState }) => state.form;
+
+export default formSlice.reducer;
