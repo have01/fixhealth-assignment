@@ -37,9 +37,9 @@ const TestimonialCard: React.FC<{
         </div>
         <div className="flex flex-col items-center justify-center text-white p-4 m bg-[#5a51df] ">
           <img
-            src={`https://source.unsplash.com/50x50/?portrait?${index}`}
+            src={`https://source.unsplash.com/200x200/?portrait?${index}`}
             alt=""
-            className="w-16 h-16 mb-2 -mt-14 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700"
+            className="w-16 h-16 mb-2 -mt-14 bg-center bg-cover rounded-full"
           />
           <p className="text-xl font-semibold leadi">{item?.username}</p>
           <p className="text-sm ">{item?.company}</p>

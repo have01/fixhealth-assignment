@@ -52,7 +52,7 @@ const TestimonialCarousel = () => {
               are saying.
             </h1>
             <h3 className="text-xl mb-5 font-light text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Don't just take our word for it , Read Reviews from our customers
             </h3>
             <div className="text-center mb-10">
               <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
