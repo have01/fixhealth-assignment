@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Step, Stepper } from "react-form-stepper";
 interface SidebarProps {
   currentStep: number;
 }

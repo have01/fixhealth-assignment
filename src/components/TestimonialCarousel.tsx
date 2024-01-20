@@ -18,6 +18,7 @@ interface clientReview {
   reviewText: string;
   reviewLink: string;
   reviewStar: number | string;
+  company: string;
 }
 
 const TestimonialCarousel = () => {
