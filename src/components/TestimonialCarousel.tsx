@@ -78,7 +78,7 @@ const TestimonialCarousel = () => {
                 <ButtonBack
                   role="button"
                   aria-label="slide backward"
-                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 transform transition duration-500 hover:scale-110 shadow-lg rounded-full flex items-center justify-center mr-2 ml-2"
+                  className="bg-white  p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5  transform transition duration-500 hover:scale-110 shadow-lg rounded-full flex items-center justify-center mr-2 ml-2"
                   id="prev"
                 >
                   <svg
@@ -98,7 +98,7 @@ const TestimonialCarousel = () => {
                 <ButtonNext
                   role="button"
                   aria-label="slide forward"
-                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg transform transition duration-500 hover:scale-110 rounded-full flex items-center justify-center"
+                  className="bg-white  p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 shadow-lg transform transition duration-500 hover:scale-110 rounded-full flex items-center justify-center"
                   id="next"
                 >
                   <svg
