@@ -119,7 +119,7 @@ const data = [
     company: "Mindtree",
   },
   {
-    username: "",
+    username: "Akash Gupta",
     userImage: "",
     reviewText:
       "Very Helpful! I hope a lot more doctors come onboard soon. The Doctor's tool is also very helpful, apart from the app. The prescriptions are all on mail, and messages, which makes things very easy to use and track. Great job overall!",
