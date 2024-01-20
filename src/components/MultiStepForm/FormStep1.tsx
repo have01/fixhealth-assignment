@@ -11,12 +11,10 @@ const FormStep1: React.FC<Form1Props> = ({ setStep }) => {
     (state: { form: { userData: { name: string; mobile: string } } }) =>
       state.form.userData
   );
-  console.log(name, mobile);
   const dispatch = useDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
-    console.log(e.target);
     dispatch(setUserData({ [name]: value }));
   };
   const handleNext = (e: React.FormEvent) => {
