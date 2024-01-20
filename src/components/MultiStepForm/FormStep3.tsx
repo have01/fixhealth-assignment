@@ -82,7 +82,6 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
             {age && age > 40 && (
               <div className="flex items-center mb-4">
                 <input
-                  required
                   value={experience}
                   name="experience"
                   onChange={handleChange}
@@ -117,6 +116,12 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
                 ))}
               </select>
             </div>
+            <button
+              onClick={() => setStep((prev) => prev - 1)}
+              className="bg-[#5a51df] px-4 py-2 rounded-sm mr-2"
+            >
+              Back
+            </button>
             <button type="submit" className="bg-[#5a51df] px-4 py-2 rounded-sm">
               Next
             </button>

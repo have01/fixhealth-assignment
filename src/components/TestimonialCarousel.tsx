@@ -29,9 +29,9 @@ const TestimonialCarousel = () => {
       if (screenWidth <= 640) {
         setVisibleSlides(1); // For mobile devices
       } else if (screenWidth <= 1024) {
-        setVisibleSlides(3); // For iPad
+        setVisibleSlides(2); // For iPad
       } else {
-        setVisibleSlides(5); // For laptops and larger screens
+        setVisibleSlides(4); // For laptops and larger screens
       }
     };
     handleResize();
@@ -43,7 +43,7 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="bg-gray-900 w-full">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto max-w-7xl ">
         <div className="w-full max-w-6xl mx-auto">
           <div className="text-center max-w-xl mx-auto">
             <h1 className="text-6xl md:text-7xl font-bold mb-5 text-[#5a51df]">
@@ -73,11 +73,11 @@ const TestimonialCarousel = () => {
           <div className="w-full relative flex flex-col">
             <div className="flex justify-between container px-6">
               <div></div>
-              <div className="flex flex-row justify-center">
+              <div className="flex flex-row justify-center w-full ">
                 <ButtonBack
                   role="button"
                   aria-label="slide backward"
-                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 ring-1 ring-slate-900/5 dark:ring-slate-200/20 transform transition duration-500 hover:scale-110 shadow-lg rounded-full flex items-center justify-center mr-2 ml-2"
+                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 transform transition duration-500 hover:scale-110 shadow-lg rounded-full flex items-center justify-center mr-2 ml-2"
                   id="prev"
                 >
                   <svg
@@ -97,7 +97,7 @@ const TestimonialCarousel = () => {
                 <ButtonNext
                   role="button"
                   aria-label="slide forward"
-                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg transform transition duration-500 hover:scale-110 rounded-full flex items-center justify-center"
+                  className="bg-white dark:bg-slate-800 p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg transform transition duration-500 hover:scale-110 rounded-full flex items-center justify-center"
                   id="next"
                 >
                   <svg
@@ -129,7 +129,7 @@ const TestimonialCarousel = () => {
                       key={index}
                       className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5"
                     >
-                      <TestimonialCard item={item} />
+                      <TestimonialCard item={item} index={index} />
                     </Slide>
                   ))}
                 </div>

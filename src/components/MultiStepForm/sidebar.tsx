@@ -1,5 +1,5 @@
 import clsx from "clsx";
-
+import { Step, Stepper } from "react-form-stepper";
 interface SidebarProps {
   currentStep: number;
 }
@@ -26,9 +26,9 @@ export const Sidebar = ({ currentStep }: SidebarProps) => {
             <li className="flex gap-4 lg:ml-8 items-center" key={step.step}>
               <button
                 className={clsx(
-                  "px-3 py-2 border-2 bg-white  border-[#5a51df] inline-flex rounded-full leading-none font-medium w-min h-min transition-colors duration-[400ms]",
+                  "px-3 py-2 border-2 bg-white  inline-flex rounded-full leading-none font-medium w-min h-min transition-colors duration-[400ms]",
                   currentStep === step.step
-                    ? " text-[#5a51df] border-cyan-400 font-semibold"
+                    ? " text-blue-500  border-blue-500  font-semibold"
                     : "black"
                 )}
               >
@@ -36,14 +36,14 @@ export const Sidebar = ({ currentStep }: SidebarProps) => {
               </button>
               <span
                 className={clsx(
-                  "hidden lg:inline uppercase",
+                  "hidden lg:inline ",
                   currentStep === step.step
-                    ? " text-[#5a51df]  font-bold"
+                    ? " text-blue-500   font-bold"
                     : "text-white"
                 )}
               >
                 <p className="font-normal">Step {step.step}</p>
-                <span className="font-bold">{step.title}</span>
+                <span className="">{step.title}</span>
               </span>
             </li>
           ))}

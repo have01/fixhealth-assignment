@@ -28,8 +28,8 @@ const FormStep1: React.FC<Form1Props> = ({ setStep }) => {
     <>
       <div className="flex justify-center">
         <div className=" rounded-lg p-5  text-white">
-          <h2 className="text-2xl font-bold pb-5">Personal Info</h2>
-          <p className="text-gray-400">
+          <h2 className="text-2xl font-bold pb-2">Personal Info</h2>
+          <p className="text-gray-400 mb-2">
             Please provide your name, email address, and phone number.
           </p>
           <form onSubmit={handleNext}>
@@ -58,6 +58,7 @@ const FormStep1: React.FC<Form1Props> = ({ setStep }) => {
                 onChange={handleChange}
               />
             </div>
+
             <button type="submit" className="bg-[#5a51df] px-4 py-2 rounded-sm">
               Next
             </button>

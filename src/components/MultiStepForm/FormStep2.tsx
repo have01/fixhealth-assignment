@@ -26,8 +26,8 @@ const FormStep2: React.FC<Form1Props> = ({ setStep }) => {
     <>
       <div className="flex justify-center">
         <div className="  rounded-lg p-5  text-white">
-          <h2 className="text-2xl font-bold pb-5">Personal Info</h2>
-          <p className="text-gray-400">
+          <h2 className="text-2xl font-bold pb-2">Personal Info</h2>
+          <p className="text-gray-400 pb-2">
             Please provide your age, city, and company information.
           </p>
           <form onSubmit={(e) => handleNext(e)}>
@@ -70,6 +70,12 @@ const FormStep2: React.FC<Form1Props> = ({ setStep }) => {
                 onChange={handleChange}
               />
             </div>
+            <button
+              onClick={() => setStep((prev) => prev - 1)}
+              className="bg-[#5a51df] px-4 py-2 rounded-sm mr-2"
+            >
+              Back
+            </button>
             <button type="submit" className="bg-[#5a51df] px-4 py-2 rounded-sm">
               Next
             </button>
