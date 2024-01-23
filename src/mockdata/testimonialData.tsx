@@ -142,7 +142,7 @@ const data = [
     username: "Akash Gupta",
     userImage: "",
     reviewText:
-      "Very Helpful! I hope a lot more doctors come onboard soon. The Doctor's tool is also very helpful, apart from the app. The prescriptions are all on mail, and messages, which makes things very easy to use and track. Great job overall!",
+      "Very Helpful! I hope a lot more doctors come onboard soon. The Doctor's tool is also very helpful, apart from the app. The prescriptions are all on mail, and messages, which makes things very easy to use and track.",
     reviewLink: "",
     reviewStar: "",
     company: "Pepsico",
@@ -164,7 +164,7 @@ const data = [
     username: "Lalitha Gunadas",
     userImage: "",
     reviewText:
-      "Extremely happy and satisfied with the service of Practo medicines delivery. Prompt response and delivery were made 1 day ahead of the due date. A special mention goes to Siddesh, the pharmacist for faster delivery. Keep up the good work, Practo!!",
+      "Extremely happy and satisfied with the service of Practo medicines delivery. Prompt response and delivery were made 1 day ahead of the due date. A special mention goes to Siddesh, the pharmacist for faster delivery.",
     reviewLink: "",
     reviewStar: "",
     company: "OpenAI",
