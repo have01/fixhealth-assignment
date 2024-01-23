@@ -4,7 +4,7 @@ interface TestimonialCardProps {
   username: string;
   reviewText: string;
   company: string;
-  reviewStar: number;
+  reviewStar: number | number;
   problem: string
   // Add other properties if needed
 }

@@ -17,7 +17,7 @@ interface clientReview {
   userImage: string;
   reviewText: string;
   reviewLink: string;
-  reviewStar: number;
+  reviewStar: number | number;
   company: string;
   problem: string;
 }
