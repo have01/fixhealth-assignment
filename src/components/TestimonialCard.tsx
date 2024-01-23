@@ -13,7 +13,6 @@ const TestimonialCard: React.FC<{
   item: TestimonialCardProps;
   index: number;
 }> = ({ item, index }) => {
-  const [more, setMore] = useState(false)
   const [isExpanded, setExpanded] = useState(false);
 
   const toggleReadMore = () => {
@@ -24,7 +23,7 @@ const TestimonialCard: React.FC<{
   return (
 
     <>
-      <div className="flex flex-col max-w-[300px] py-2sm:max-w-sm mx-2 my-6 h-[345px] shadow-lg bg-white shadow-lg rounded-md">
+      <div className="flex flex-col max-w-[300px] py-2 sm:max-w-sm mx-2 my-6 h-[345px] shadow-lg bg-white shadow-lg rounded-md">
         <div className="flex text-white p-4">
           <img
             src={`https://source.unsplash.com/300x300/?portrait?${index}`}

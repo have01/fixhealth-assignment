@@ -18,7 +18,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
   const [availableDoctors, setAvailableDoctors] = useState<Doctor[]>([]);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null); // State to store selected doctor details
-  const [selected, setSelected] = useState<string>(false)
+  const [selected, setSelected] = useState(false)
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
@@ -168,7 +168,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
                   <ul className="py-2 w-full text-sm text-gray-700 bg-white absolute max-h-[280px] rounded-sm mt-1 overflow-y-auto dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                     {availableDoctors?.map((doctor: Doctor) => (
                       <div key={doctor?.name} onClick={() => handleDoctorSelect(doctor)} className="flex w-full border-b border-gray-300  py-1 items-center px-2 cursor-pointer">
-                        <img src={doctor?.image} alt="" srcset="" className="rounded-full flex-shrink-0 object-cover w-12 h-12 mx-1 rounded-full" />
+                        <img src={doctor?.image} alt="doctor" className="rounded-full flex-shrink-0 object-cover w-12 h-12 mx-1 rounded-full" />
                         <p className="ml-2"> {doctor?.name} <span className="ml-2">({doctor?.specialty})</span></p>
                       </div>
                     ))}
