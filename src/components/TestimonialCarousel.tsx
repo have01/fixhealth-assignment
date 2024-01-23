@@ -1,16 +1,14 @@
 // Carousel.tsx
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CarouselProvider,
   Slider,
   Slide,
-  ButtonBack,
-  ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import data from "../mockdata/testimonialData";
-import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
+import TestimonialCard from "./TestimonialCard";
 
 interface clientReview {
   username: string;

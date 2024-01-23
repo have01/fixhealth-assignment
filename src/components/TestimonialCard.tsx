@@ -21,7 +21,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = (props) => {
     setExpanded(!isExpanded);
   };
 
-  const { username, userImage, reviewText, reviewLink, reviewStar, company, problem, index } = props;
+  const { username, reviewText, reviewStar, company, problem, index } = props;
 
   return (
     <>
