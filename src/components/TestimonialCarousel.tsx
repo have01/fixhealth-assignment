@@ -5,6 +5,8 @@ import {
   CarouselProvider,
   Slider,
   Slide,
+  ButtonBack,
+  ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import data from "../mockdata/testimonialData";
@@ -70,6 +72,49 @@ const TestimonialCarousel = () => {
           step={1}
           infinite={true}
         >
+          <div className="flex flex-row justify-center w-full ">
+            <ButtonBack
+              role="button"
+              aria-label="slide backward"
+              className="bg-white  p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5  transform transition duration-500 hover:scale-110 shadow-lg rounded-full flex items-center justify-center mr-2 ml-2"
+              id="prev"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </ButtonBack>
+            <ButtonNext
+              role="button"
+              aria-label="slide forward"
+              className="bg-white  p-2 w-6 h-6 sm:w-10 sm:h-10 ring-1 ring-slate-900/5 shadow-lg transform transition duration-500 hover:scale-110 rounded-full flex items-center justify-center"
+              id="next"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </ButtonNext>
+          </div>
+
           <Slider>
             {data.map((item: clientReview, index) => (
               <Slide
