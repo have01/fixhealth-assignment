@@ -8,6 +8,8 @@ const MultiStepForm = lazy(() => import("./components/MultiStepForm"));
 const TestimonialCarousel = lazy(
   () => import("./components/TestimonialCarousel")
 );
+const Footer = lazy(() => import("./components/Footer"));
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Hero />
         <MultiStepForm />
         <TestimonialCarousel />
+        <Footer />
       </Suspense>
     </>
   );
