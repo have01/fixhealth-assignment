@@ -1,7 +1,11 @@
+import React, { useState } from 'react'
+import Rating from '@mui/material/Rating';
 interface TestimonialCardProps {
   username: string;
   reviewText: string;
   company: string;
+  reviewStar: number;
+  problem: string
   // Add other properties if needed
 }
 
@@ -9,42 +13,45 @@ const TestimonialCard: React.FC<{
   item: TestimonialCardProps;
   index: number;
 }> = ({ item, index }) => {
+  const [more, setMore] = useState(false)
+  const [isExpanded, setExpanded] = useState(false);
+
+  const toggleReadMore = () => {
+    setExpanded(!isExpanded);
+  };
+
+
   return (
+
     <>
-      <div className="flex flex-col max-w-[300px] sm:max-w-sm mx-2 my-6 h-[280px] bg-white shadow-lg justify-between">
-        <div className="px-2 py-4 rounded-t-lg sm:px-8 md:px-12">
-          <p className="relative  py-1 text-md text-center ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              fill="currentColor"
-              className="w-4 h-4 text-violet-400  "
-            >
-              <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
-              <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
-            </svg>
-            <span className="line-clamp-4"> {item?.reviewText}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              fill="currentColor"
-              className="absolute right-0 w-4 h-4 text-violet-400"
-            >
-              <path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
-              <path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
-            </svg>
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center text-white p-4 m bg-[#5a51df] ">
+      <div className="flex flex-col max-w-[300px] py-2sm:max-w-sm mx-2 my-6 h-[345px] shadow-lg bg-white shadow-lg rounded-md">
+        <div className="flex text-white p-4">
           <img
-            src={`https://source.unsplash.com/200x200/?portrait?${index}`}
+            src={`https://source.unsplash.com/300x300/?portrait?${index}`}
             alt=""
-            className="w-16 h-16 mb-2 -mt-14 bg-center bg-cover rounded-full"
+            className="w-20 h-20 mb-2 bg-center bg-cover rounded-full"
           />
-          <p className="text-xl font-semibold leadi">{item?.username}</p>
-          <p className="text-sm ">{item?.company}</p>
+          <div className='flex flex-col ml-4'>
+            <p className="font-semibold text-black">{item?.username}</p>
+            <p className="text-sm text-black">{item?.company}</p>
+            <Rating name="simple-controlled" value={item?.reviewStar} />
+          </div>
         </div>
-      </div>
+        <div className={`rounded-t-lg px-2 ${isExpanded ? 'overflow-y-scroll' : 'overflow-y-scroll'}`}>
+          <p className="font-semibold px-2">{item?.problem}</p>
+          <p className={`py-1 px-2 ${item.reviewText.length > 250 && !isExpanded ? 'line-clamp-6' : 'line-clamp-none'}`}>
+            {item?.reviewText}
+          </p>
+          {item?.reviewText.length > 250 && (
+            <button
+              onClick={toggleReadMore}
+              className="text-blue-500 hover:underline focus:outline-none px-2"
+            >
+              {item?.reviewText.length > 250 && !isExpanded ? 'Read More' : 'Read Less'}
+            </button>
+          )}
+        </div>
+      </div >
     </>
   );
 };

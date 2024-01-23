@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { setUserData } from "../../redux/formSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,6 +22,14 @@ const FormStep2: React.FC<Form1Props> = ({ setStep }) => {
     const { name, value } = e.target;
     dispatch(setUserData({ [name]: value }));
   };
+  useEffect(() => {
+    // Fetch data from the API with the city parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const cityParam = urlParams.get("city") ? urlParams.get("city") : city;
+    dispatch(setUserData({ city: cityParam }));
+
+  }, [city]);
+
   return (
     <>
       <div className="flex justify-center">

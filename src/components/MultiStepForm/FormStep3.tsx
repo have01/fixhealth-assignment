@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUserData } from "../../redux/formSlice"; // Import the setUserData action
+import { setUserData } from "../../redux/formSlice";
+
 interface Form1Props {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 }
+
 interface Doctor {
   name?: string;
   specialty?: string;
   city?: string;
+  image?: string;
 }
 
 const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
   const dispatch = useDispatch();
-  const [availableDoctors, setAvailableDoctors] = useState([]);
+  const [availableDoctors, setAvailableDoctors] = useState<Doctor[]>([]);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null); // State to store selected doctor details
+  const [selected, setSelected] = useState<string>(false)
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
 
-  const { chiefComplaints, experience, doctor, age, city } = useSelector(
+  const { chiefComplaints, experience, age, city } = useSelector(
     (state: {
       form: {
         userData: {
@@ -32,7 +41,7 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
     // Fetch data from the API with the city parameter
     const urlParams = new URLSearchParams(window.location.search);
     const cityParam = urlParams.get("city") ? urlParams.get("city") : city;
-    const apiUrl =`https://fixbackend-production.up.railway.app/api/doctors?city=${cityParam}`;
+    const apiUrl = `https://fixbackend-production.up.railway.app/api/doctors?city=${cityParam}`;
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setAvailableDoctors(data))
@@ -41,7 +50,19 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
 
   const handleNext = (e: React.FormEvent) => {
     e.preventDefault();
-    setStep(4);
+    console.log(selectedDoctor)
+    if (!selectedDoctor) {
+      setSelected(!selected)
+    } else {
+      setStep(4);
+      setSelected(false)
+    }
+  };
+
+  const handleDoctorSelect = (doctor: Doctor) => {
+    setSelectedDoctor(doctor);
+    setDropdownOpen(false);
+    setSelected(false)
   };
 
   const handleChange = (
@@ -98,22 +119,63 @@ const FormStep3: React.FC<Form1Props> = ({ setStep }) => {
               <label className="block mb-2 text-sm font-medium">
                 Select Doctor
               </label>
-              <select
-                id="selectDoctor"
-                className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full py-2.5 px-4"
-                value={doctor}
-                name="doctor"
-                onChange={handleChange}
-              >
-                <option value="" disabled>
-                  Select a Doctor
-                </option>
-                {availableDoctors?.map((doctor: Doctor) => (
-                  <option key={doctor.name} value={doctor.name}>
-                    {doctor?.name} <p className="ml-2">({doctor?.specialty})</p>
-                  </option>
-                ))}
-              </select>
+
+              <div className="relative">
+                <button
+                  id="dropdownDefaultButton"
+                  onClick={toggleDropdown}
+                  className="text-black w-full flex justify-between bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="button"
+                >
+                  {selectedDoctor ? (
+                    <>
+                      <div className="flex items-center">
+                        <img
+                          src={selectedDoctor.image}
+                          alt=""
+                          className="rounded-full flex-shrink-0 object-cover w-8 h-8 mx-1 rounded-full"
+                        />
+                        <p className="">
+                          {selectedDoctor.name}{" "}
+                          <span className="ml-2">
+                            ({selectedDoctor.specialty})
+                          </span>
+                        </p>
+
+                      </div>
+                    </>
+                  ) : (
+                    "Select doctor"
+                  )}
+                  <svg
+                    className="w-2.5 h-2.5 ms-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                {/* Dropdown menu */}
+                {isDropdownOpen && (
+                  <ul className="py-2 w-full text-sm text-gray-700 bg-white absolute max-h-[280px] rounded-sm mt-1 overflow-y-auto dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                    {availableDoctors?.map((doctor: Doctor) => (
+                      <div key={doctor?.name} onClick={() => handleDoctorSelect(doctor)} className="flex w-full border-b border-gray-300  py-1 items-center px-2 cursor-pointer">
+                        <img src={doctor?.image} alt="" srcset="" className="rounded-full flex-shrink-0 object-cover w-12 h-12 mx-1 rounded-full" />
+                        <p className="ml-2"> {doctor?.name} <span className="ml-2">({doctor?.specialty})</span></p>
+                      </div>
+                    ))}
+                  </ul>
+                )}
+                {selected ? "Select a doctor before submit" : ""}
+              </div>
             </div>
             <button
               onClick={() => setStep((prev) => prev - 1)}
