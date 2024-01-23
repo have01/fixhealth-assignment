@@ -10,7 +10,7 @@ const FormStep2: React.FC<Form1Props> = ({ setStep }) => {
   const dispatch = useDispatch();
   const { age, city, company } = useSelector(
     (state: {
-      form: { userData: { age?: number; city: string; company: string } };
+      form: { userData: { age?: number | string; city: string; company: string } };
     }) => state.form.userData
   );
 

@@ -6,7 +6,7 @@ interface FormState {
     name?: string;
     mobile?: string;
     age?: number;
-    city?: string;
+    city?: string | null;
     company?: string;
     chiefComplaints?: string;
     expreience?: string;
